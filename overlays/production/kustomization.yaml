@@ -1,0 +1,8 @@
+kind: Kustomization
+bases:
+  - ../../base
+namePrefix: prod-
+resources:
+  - pvc.yaml
+patchesStrategicMerge:
+  - patch.yaml

@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: todonodejs
+    name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todonodejs
+      name: mysql
+  template:
+    metadata:
+      labels:
+        app: todonodejs
+        name: mysql
+    spec:
+      volumes:
+        - $patch: replace
+        - name: db-volume
+          persistentVolumeClaim:
+             claimName: prod-mysql-dbclaim
