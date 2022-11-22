@@ -4,5 +4,6 @@ bases:
 namePrefix: prod-
 resources:
   - pvc.yaml
+  - route.yaml
 patchesStrategicMerge:
   - patch.yaml
